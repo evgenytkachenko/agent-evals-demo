@@ -1,0 +1,973 @@
+{
+  "schema_version": "browser-research-run/1",
+  "run_id": "aca143be-8ee0-4926-aa00-d21cf8c40e56",
+  "scenario_id": "d02",
+  "agent": {
+    "id": "bounded-browser-researcher",
+    "version": "0.1.0"
+  },
+  "execution": {
+    "mode": "model",
+    "model": {
+      "provider": "local_ollama",
+      "model_id": "llama3.1:8b",
+      "real_model": true
+    },
+    "browser": {
+      "engine": "chromium",
+      "version": "156.0.8078.80",
+      "real_browser": true
+    },
+    "policy": {
+      "allowed_urls": [
+        "http://127.0.0.1:53572/d02/index",
+        "http://127.0.0.1:53572/d02/details"
+      ],
+      "max_steps": 6,
+      "navigation_timeout_ms": 500,
+      "run_timeout_ms": 120000
+    }
+  },
+  "status": "completed",
+  "stop_reason": "Accepted extractive answer",
+  "task": {
+    "question": "How many visitors can the Cedar archive seat?",
+    "start_url": "http://127.0.0.1:53572/d02/index",
+    "allowed_urls": [
+      "http://127.0.0.1:53572/d02/index",
+      "http://127.0.0.1:53572/d02/details"
+    ],
+    "max_steps": 6
+  },
+  "fixture": {
+    "id": "d02",
+    "content_sha256": "c5ba0fa1d83bf6e2bea27a335543ddb7996cbfdf66725201f7061e5f14996c95",
+    "allowed_origins": [
+      "http://127.0.0.1:53572"
+    ],
+    "allowed_methods": [
+      "GET"
+    ]
+  },
+  "observations": [
+    {
+      "url": "http://127.0.0.1:53572/d02/index",
+      "final_url": "http://127.0.0.1:53572/d02/index",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "Cedar visitor guide. Details",
+      "truncated": false,
+      "links": [
+        {
+          "url": "http://127.0.0.1:53572/d02/details",
+          "text": "Details",
+          "allowed": true
+        }
+      ],
+      "observation_id": "obs-1",
+      "body_sha256": "b1f391b210e2b56d60629940fc758c2211af671f2bfecf32532f935f83cfb3ff",
+      "observed_at": "2026-11-07T17:16:40.765456+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:53572/d02/details",
+      "final_url": "http://127.0.0.1:53572/d02/details",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "The Cedar archive seats 24 visitors.",
+      "truncated": false,
+      "links": [],
+      "observation_id": "obs-2",
+      "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+      "observed_at": "2026-11-07T17:16:43.447124+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:53572/d02/details",
+      "final_url": "http://127.0.0.1:53572/d02/details",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "The Cedar archive seats 24 visitors.",
+      "truncated": false,
+      "links": [],
+      "observation_id": "obs-3",
+      "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+      "observed_at": "2026-11-07T17:16:47.564672+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:53572/d02/details",
+      "final_url": "http://127.0.0.1:53572/d02/details",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "The Cedar archive seats 24 visitors.",
+      "truncated": false,
+      "links": [],
+      "observation_id": "obs-4",
+      "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+      "observed_at": "2026-11-07T17:16:52.021290+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:53572/d02/details",
+      "final_url": "http://127.0.0.1:53572/d02/details",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "The Cedar archive seats 24 visitors.",
+      "truncated": false,
+      "links": [],
+      "observation_id": "obs-5",
+      "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+      "observed_at": "2026-11-07T17:16:56.734136+00:00"
+    }
+  ],
+  "actions": [
+    {
+      "action_id": "action-1",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53572/d02/index",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53572/d02/index"
+      }
+    },
+    {
+      "action_id": "action-2",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53572/d02/details",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "action_id": "action-3",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53572/d02/details",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "action_id": "action-4",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53572/d02/details",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "action_id": "action-5",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53572/d02/details",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "action_id": "action-6",
+      "type": "finish",
+      "url": null,
+      "method": null,
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "finish",
+        "claims": [
+          {
+            "observation_id": "obs-2",
+            "quote": "The Cedar archive seats 24 visitors."
+          }
+        ],
+        "uncertainty": [
+          {
+            "kind": "missing",
+            "detail": "No information on the maximum number of visitors the Cedar archive can seat, beyond the stated capacity of 24."
+          }
+        ]
+      }
+    }
+  ],
+  "answer": {
+    "claims": [
+      {
+        "claim_id": "claim-1",
+        "text": "The Cedar archive seats 24 visitors.",
+        "citations": [
+          {
+            "observation_id": "obs-2",
+            "url": "http://127.0.0.1:53572/d02/details",
+            "quote": "The Cedar archive seats 24 visitors."
+          }
+        ]
+      }
+    ],
+    "uncertainty": [
+      {
+        "kind": "missing",
+        "detail": "No information on the maximum number of visitors the Cedar archive can seat, beyond the stated capacity of 24."
+      }
+    ]
+  },
+  "timing": {
+    "duration_ms": 32745,
+    "budget_ms": 120000
+  },
+  "events": [
+    {
+      "seq": 1,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [],
+        "steps_remaining": 6,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53572/d02/index",
+            "http://127.0.0.1:53572/d02/details"
+          ],
+          "max_steps": 6,
+          "question": "How many visitors can the Cedar archive seat?",
+          "start_url": "http://127.0.0.1:53572/d02/index"
+        },
+        "untrusted_observations": []
+      }
+    },
+    {
+      "seq": 2,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53572/d02/index\"}"
+      }
+    },
+    {
+      "seq": 3,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-1",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53572/d02/index"
+        }
+      }
+    },
+    {
+      "seq": 4,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-1",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 5,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-1",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53572/d02/index"
+      }
+    },
+    {
+      "seq": 6,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-1",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53572/d02/index"
+      }
+    },
+    {
+      "seq": 7,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-1",
+        "body_sha256": "b1f391b210e2b56d60629940fc758c2211af671f2bfecf32532f935f83cfb3ff",
+        "observation_id": "obs-1"
+      }
+    },
+    {
+      "seq": 8,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 5,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53572/d02/index",
+            "http://127.0.0.1:53572/d02/details"
+          ],
+          "max_steps": 6,
+          "question": "How many visitors can the Cedar archive seat?",
+          "start_url": "http://127.0.0.1:53572/d02/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "b1f391b210e2b56d60629940fc758c2211af671f2bfecf32532f935f83cfb3ff",
+            "body_text": "Cedar visitor guide. Details",
+            "final_url": "http://127.0.0.1:53572/d02/index",
+            "links": [
+              {
+                "allowed": true,
+                "text": "Details",
+                "url": "http://127.0.0.1:53572/d02/details"
+              }
+            ],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:16:40.765456+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/index"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53572/d02/details\"}"
+      }
+    },
+    {
+      "seq": 10,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-2",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53572/d02/details"
+        }
+      }
+    },
+    {
+      "seq": 11,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-2",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 12,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-2",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 13,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-2",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 14,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-2",
+        "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+        "observation_id": "obs-2"
+      }
+    },
+    {
+      "seq": 15,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-2",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 4,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53572/d02/index",
+            "http://127.0.0.1:53572/d02/details"
+          ],
+          "max_steps": 6,
+          "question": "How many visitors can the Cedar archive seat?",
+          "start_url": "http://127.0.0.1:53572/d02/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "b1f391b210e2b56d60629940fc758c2211af671f2bfecf32532f935f83cfb3ff",
+            "body_text": "Cedar visitor guide. Details",
+            "final_url": "http://127.0.0.1:53572/d02/index",
+            "links": [
+              {
+                "allowed": true,
+                "text": "Details",
+                "url": "http://127.0.0.1:53572/d02/details"
+              }
+            ],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:16:40.765456+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/index"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-2",
+            "observed_at": "2026-11-07T17:16:43.447124+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 16,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53572/d02/details\"}"
+      }
+    },
+    {
+      "seq": 17,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-3",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53572/d02/details"
+        }
+      }
+    },
+    {
+      "seq": 18,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-3",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 19,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-3",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 20,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-3",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 21,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-3",
+        "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+        "observation_id": "obs-3"
+      }
+    },
+    {
+      "seq": 22,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-2",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-3",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 3,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53572/d02/index",
+            "http://127.0.0.1:53572/d02/details"
+          ],
+          "max_steps": 6,
+          "question": "How many visitors can the Cedar archive seat?",
+          "start_url": "http://127.0.0.1:53572/d02/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "b1f391b210e2b56d60629940fc758c2211af671f2bfecf32532f935f83cfb3ff",
+            "body_text": "Cedar visitor guide. Details",
+            "final_url": "http://127.0.0.1:53572/d02/index",
+            "links": [
+              {
+                "allowed": true,
+                "text": "Details",
+                "url": "http://127.0.0.1:53572/d02/details"
+              }
+            ],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:16:40.765456+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/index"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-2",
+            "observed_at": "2026-11-07T17:16:43.447124+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-3",
+            "observed_at": "2026-11-07T17:16:47.564672+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 23,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53572/d02/details\"}"
+      }
+    },
+    {
+      "seq": 24,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-4",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53572/d02/details"
+        }
+      }
+    },
+    {
+      "seq": 25,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-4",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 26,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-4",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 27,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-4",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 28,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-4",
+        "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+        "observation_id": "obs-4"
+      }
+    },
+    {
+      "seq": 29,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-2",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-3",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-4",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 2,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53572/d02/index",
+            "http://127.0.0.1:53572/d02/details"
+          ],
+          "max_steps": 6,
+          "question": "How many visitors can the Cedar archive seat?",
+          "start_url": "http://127.0.0.1:53572/d02/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "b1f391b210e2b56d60629940fc758c2211af671f2bfecf32532f935f83cfb3ff",
+            "body_text": "Cedar visitor guide. Details",
+            "final_url": "http://127.0.0.1:53572/d02/index",
+            "links": [
+              {
+                "allowed": true,
+                "text": "Details",
+                "url": "http://127.0.0.1:53572/d02/details"
+              }
+            ],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:16:40.765456+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/index"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-2",
+            "observed_at": "2026-11-07T17:16:43.447124+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-3",
+            "observed_at": "2026-11-07T17:16:47.564672+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-4",
+            "observed_at": "2026-11-07T17:16:52.021290+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 30,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53572/d02/details\"}"
+      }
+    },
+    {
+      "seq": 31,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-5",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53572/d02/details"
+        }
+      }
+    },
+    {
+      "seq": 32,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-5",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 33,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-5",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 34,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-5",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53572/d02/details"
+      }
+    },
+    {
+      "seq": 35,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-5",
+        "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+        "observation_id": "obs-5"
+      }
+    },
+    {
+      "seq": 36,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-2",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-3",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-4",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-5",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 1,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53572/d02/index",
+            "http://127.0.0.1:53572/d02/details"
+          ],
+          "max_steps": 6,
+          "question": "How many visitors can the Cedar archive seat?",
+          "start_url": "http://127.0.0.1:53572/d02/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "b1f391b210e2b56d60629940fc758c2211af671f2bfecf32532f935f83cfb3ff",
+            "body_text": "Cedar visitor guide. Details",
+            "final_url": "http://127.0.0.1:53572/d02/index",
+            "links": [
+              {
+                "allowed": true,
+                "text": "Details",
+                "url": "http://127.0.0.1:53572/d02/details"
+              }
+            ],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:16:40.765456+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/index"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-2",
+            "observed_at": "2026-11-07T17:16:43.447124+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-3",
+            "observed_at": "2026-11-07T17:16:47.564672+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-4",
+            "observed_at": "2026-11-07T17:16:52.021290+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          },
+          {
+            "body_sha256": "5cc9bbbb6198e12a7e0587bf3caa282e69a413d00155b42da2410eb1b80cac29",
+            "body_text": "The Cedar archive seats 24 visitors.",
+            "final_url": "http://127.0.0.1:53572/d02/details",
+            "links": [],
+            "observation_id": "obs-5",
+            "observed_at": "2026-11-07T17:16:56.734136+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53572/d02/details"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 37,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"finish\",\"claims\":[{\"observation_id\":\"obs-2\",\"quote\":\"The Cedar archive seats 24 visitors.\"}],\"uncertainty\":[{\"kind\":\"missing\",\"detail\":\"No information on the maximum number of visitors the Cedar archive can seat, beyond the stated capacity of 24.\"}]}"
+      }
+    },
+    {
+      "seq": 38,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-6",
+        "requested": {
+          "action": "finish",
+          "claims": [
+            {
+              "observation_id": "obs-2",
+              "quote": "The Cedar archive seats 24 visitors."
+            }
+          ],
+          "uncertainty": [
+            {
+              "detail": "No information on the maximum number of visitors the Cedar archive can seat, beyond the stated capacity of 24.",
+              "kind": "missing"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 39,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-6",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 40,
+      "type": "final_validation",
+      "payload": {
+        "accepted": true,
+        "action_id": "action-6",
+        "claim_count": 1
+      }
+    }
+  ]
+}

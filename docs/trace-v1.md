@@ -1,0 +1,15 @@
+# Browser researcher trace contract v1
+
+Top-level JSON: `schema_version: "browser-research-run/1"`, `run_id`, `scenario_id`, `agent: {id,version}`, `execution: {mode: "model"|"scripted_test", model: {provider,model_id,real_model}, browser: {engine,real_browser,version?} (version is an optional nonempty provenance string), policy: {allowed_urls,max_steps,navigation_timeout_ms,run_timeout_ms}}`, `status: "completed"|"timeout"|"error"|"exhausted"|"blocked"`, `stop_reason`, `task: {question,start_url,allowed_urls,max_steps}`, `fixture: {id,content_sha256,allowed_origins,allowed_methods}`, `observations`, `actions`, `answer`, `timing: {duration_ms,budget_ms}`, `events`.
+
+Observation: `{observation_id,url,final_url,status_code,title,body_text,body_sha256,observed_at,links:[{url,text,allowed}]}`. Body hash is SHA-256 over exact UTF-8 body_text. `body_text` is rendered innerText, bounded to 24,000 characters; a `truncated` boolean identifies truncation.
+
+Action: `{action_id,type,url,method,allowed,performed,reason,requested}`. `type` is action name. `requested` is exact parsed model JSON. `performed` means navigation completed with an observation or a valid answer was accepted, not merely attempted.
+
+Answer: null until accepted, else `{claims:[{claim_id,text,citations:[{observation_id,url,quote}]}],uncertainty:[{kind,detail}]}`. In v1 every claim has exactly one citation, claim text equals that quote, and the nonempty quote must occur exactly within the referenced observation. Kinds: missing, conflict, timeout, other. These are agent declarations, not trusted semantic judgments.
+
+Event: `{seq,type,payload}`. Types: model_request, model_response, action_proposed, gateway_decision, browser_request, browser_response, observation, final_validation, error. `action_proposed.payload={action_id,requested}`. `gateway_decision.payload={action_id,allowed,reason}`. `browser_request.payload={action_id,url,method,resource_type,allowed,reason}`. `browser_response.payload={action_id,url,status_code}`. A browser request allowed event means dispatched, not response success. `observation.payload={action_id,observation_id,body_sha256}`. Errors include `{kind,message,action_id?}`. Model request contains only public task, observations, and prior public decisions; never fixture oracle.
+
+Model protocol: one JSON object per step, no fences. `{"action":"navigate","url":"exact allowlisted URL"}` or `{"action":"finish","claims":[{"observation_id":"obs-1","quote":"exact text"}],"uncertainty":[{"kind":"missing","detail":"..."}]}`. Extra keys rejected. The gateway owns authority. No generic click, type, form, shell, file, credential, network, or script tool is exposed.
+
+Controller fixture input: `{id,question,start_path,pages:[{path,html,delay_ms?}],max_steps?,navigation_timeout_ms?,run_timeout_ms?}`. HTML is served only from a fresh loopback port with immutable GET handler. Page paths become exact allowlisted URLs. Extra controller fields (including expected_text/oracle) are never sent to the model. Policy and fixture hashes are trusted only when bound by the independent evaluator; this trace alone is not attested.

@@ -1,0 +1,703 @@
+{
+  "schema_version": "browser-research-run/1",
+  "run_id": "0b1524b0-b5eb-4f3b-847c-e57e9f4b08e6",
+  "scenario_id": "d01",
+  "agent": {
+    "id": "bounded-browser-researcher",
+    "version": "0.1.0"
+  },
+  "execution": {
+    "mode": "model",
+    "model": {
+      "provider": "local_ollama",
+      "model_id": "llama3.1:8b",
+      "real_model": true
+    },
+    "browser": {
+      "engine": "chromium",
+      "version": "156.0.8078.80",
+      "real_browser": true
+    },
+    "policy": {
+      "allowed_urls": [
+        "http://127.0.0.1:53478/d01/index"
+      ],
+      "max_steps": 6,
+      "navigation_timeout_ms": 500,
+      "run_timeout_ms": 120000
+    }
+  },
+  "status": "completed",
+  "stop_reason": "Accepted extractive answer",
+  "task": {
+    "question": "When does the Cedar archive open?",
+    "start_url": "http://127.0.0.1:53478/d01/index",
+    "allowed_urls": [
+      "http://127.0.0.1:53478/d01/index"
+    ],
+    "max_steps": 6
+  },
+  "fixture": {
+    "id": "d01",
+    "content_sha256": "07c40e2db5b6708017631cb31728453c15b61729fe9def208de7509e1f3c3ae7",
+    "allowed_origins": [
+      "http://127.0.0.1:53478"
+    ],
+    "allowed_methods": [
+      "GET"
+    ]
+  },
+  "observations": [
+    {
+      "url": "http://127.0.0.1:53478/d01/index",
+      "final_url": "http://127.0.0.1:53478/d01/index",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "The Cedar archive opens on Tuesday.",
+      "truncated": false,
+      "links": [],
+      "observation_id": "obs-1",
+      "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+      "observed_at": "2026-11-07T17:15:45.616717+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:53478/d01/index",
+      "final_url": "http://127.0.0.1:53478/d01/index",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "The Cedar archive opens on Tuesday.",
+      "truncated": false,
+      "links": [],
+      "observation_id": "obs-2",
+      "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+      "observed_at": "2026-11-07T17:15:49.279552+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:53478/d01/index",
+      "final_url": "http://127.0.0.1:53478/d01/index",
+      "status_code": 200,
+      "title": "Archive guide",
+      "body_text": "The Cedar archive opens on Tuesday.",
+      "truncated": false,
+      "links": [],
+      "observation_id": "obs-3",
+      "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+      "observed_at": "2026-11-07T17:15:58.382050+00:00"
+    }
+  ],
+  "actions": [
+    {
+      "action_id": "action-1",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53478/d01/index",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "action_id": "action-2",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53478/d01/index",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "action_id": "action-3",
+      "type": "finish",
+      "url": null,
+      "method": null,
+      "allowed": false,
+      "performed": false,
+      "reason": "Final collections exceed limits",
+      "requested": {
+        "action": "finish",
+        "claims": [
+          {
+            "observation_id": "obs-1",
+            "quote": "The Cedar archive opens on Tuesday."
+          },
+          {
+            "observation_id": "obs-2",
+            "quote": "The Cedar archive opens on Tuesday."
+          }
+        ],
+        "uncertainty": {
+          "kind": "other",
+          "detail": "Duplicate observations with identical text"
+        }
+      }
+    },
+    {
+      "action_id": "action-4",
+      "type": "navigate",
+      "url": "http://127.0.0.1:53478/d01/index",
+      "method": "GET",
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "navigate",
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "action_id": "action-5",
+      "type": "finish",
+      "url": null,
+      "method": null,
+      "allowed": true,
+      "performed": true,
+      "reason": "Accepted by closed action contract",
+      "requested": {
+        "action": "finish",
+        "claims": [
+          {
+            "observation_id": "obs-1",
+            "quote": "The Cedar archive opens on Tuesday."
+          }
+        ],
+        "uncertainty": [
+          {
+            "kind": "other",
+            "detail": "Multiple identical observations with same body text"
+          }
+        ]
+      }
+    }
+  ],
+  "answer": {
+    "claims": [
+      {
+        "claim_id": "claim-1",
+        "text": "The Cedar archive opens on Tuesday.",
+        "citations": [
+          {
+            "observation_id": "obs-1",
+            "url": "http://127.0.0.1:53478/d01/index",
+            "quote": "The Cedar archive opens on Tuesday."
+          }
+        ]
+      }
+    ],
+    "uncertainty": [
+      {
+        "kind": "other",
+        "detail": "Multiple identical observations with same body text"
+      }
+    ]
+  },
+  "timing": {
+    "duration_ms": 29520,
+    "budget_ms": 120000
+  },
+  "events": [
+    {
+      "seq": 1,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [],
+        "steps_remaining": 6,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53478/d01/index"
+          ],
+          "max_steps": 6,
+          "question": "When does the Cedar archive open?",
+          "start_url": "http://127.0.0.1:53478/d01/index"
+        },
+        "untrusted_observations": []
+      }
+    },
+    {
+      "seq": 2,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53478/d01/index\"}"
+      }
+    },
+    {
+      "seq": 3,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-1",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53478/d01/index"
+        }
+      }
+    },
+    {
+      "seq": 4,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-1",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 5,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-1",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "seq": 6,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-1",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "seq": 7,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-1",
+        "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+        "observation_id": "obs-1"
+      }
+    },
+    {
+      "seq": 8,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 5,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53478/d01/index"
+          ],
+          "max_steps": 6,
+          "question": "When does the Cedar archive open?",
+          "start_url": "http://127.0.0.1:53478/d01/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:15:45.616717+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53478/d01/index\"}"
+      }
+    },
+    {
+      "seq": 10,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-2",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53478/d01/index"
+        }
+      }
+    },
+    {
+      "seq": 11,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-2",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 12,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-2",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "seq": 13,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-2",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "seq": 14,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-2",
+        "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+        "observation_id": "obs-2"
+      }
+    },
+    {
+      "seq": 15,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-2",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 4,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53478/d01/index"
+          ],
+          "max_steps": 6,
+          "question": "When does the Cedar archive open?",
+          "start_url": "http://127.0.0.1:53478/d01/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:15:45.616717+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          },
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-2",
+            "observed_at": "2026-11-07T17:15:49.279552+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 16,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"finish\",\"claims\":[{\"observation_id\":\"obs-1\",\"quote\":\"The Cedar archive opens on Tuesday.\"},{\"observation_id\":\"obs-2\",\"quote\":\"The Cedar archive opens on Tuesday.\"}], \"uncertainty\":{\"kind\":\"other\",\"detail\":\"Duplicate observations with identical text\"}}"
+      }
+    },
+    {
+      "seq": 17,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-3",
+        "requested": {
+          "action": "finish",
+          "claims": [
+            {
+              "observation_id": "obs-1",
+              "quote": "The Cedar archive opens on Tuesday."
+            },
+            {
+              "observation_id": "obs-2",
+              "quote": "The Cedar archive opens on Tuesday."
+            }
+          ],
+          "uncertainty": {
+            "detail": "Duplicate observations with identical text",
+            "kind": "other"
+          }
+        }
+      }
+    },
+    {
+      "seq": 18,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-3",
+        "allowed": false,
+        "reason": "Final collections exceed limits"
+      }
+    },
+    {
+      "seq": 19,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-2",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-3",
+            "allowed": false,
+            "reason": "Final collections exceed limits"
+          }
+        ],
+        "steps_remaining": 3,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53478/d01/index"
+          ],
+          "max_steps": 6,
+          "question": "When does the Cedar archive open?",
+          "start_url": "http://127.0.0.1:53478/d01/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:15:45.616717+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          },
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-2",
+            "observed_at": "2026-11-07T17:15:49.279552+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 20,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"navigate\",\"url\":\"http://127.0.0.1:53478/d01/index\"}"
+      }
+    },
+    {
+      "seq": 21,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-4",
+        "requested": {
+          "action": "navigate",
+          "url": "http://127.0.0.1:53478/d01/index"
+        }
+      }
+    },
+    {
+      "seq": 22,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-4",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 23,
+      "type": "browser_request",
+      "payload": {
+        "action_id": "action-4",
+        "allowed": true,
+        "method": "GET",
+        "reason": "One authorized controlled document request",
+        "resource_type": "document",
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "seq": 24,
+      "type": "browser_response",
+      "payload": {
+        "action_id": "action-4",
+        "status_code": 200,
+        "url": "http://127.0.0.1:53478/d01/index"
+      }
+    },
+    {
+      "seq": 25,
+      "type": "observation",
+      "payload": {
+        "action_id": "action-4",
+        "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+        "observation_id": "obs-3"
+      }
+    },
+    {
+      "seq": 26,
+      "type": "model_request",
+      "payload": {
+        "prior_gateway_decisions": [
+          {
+            "action_id": "action-1",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-2",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          },
+          {
+            "action_id": "action-3",
+            "allowed": false,
+            "reason": "Final collections exceed limits"
+          },
+          {
+            "action_id": "action-4",
+            "allowed": true,
+            "reason": "Accepted by closed action contract"
+          }
+        ],
+        "steps_remaining": 2,
+        "trusted_task": {
+          "allowed_urls": [
+            "http://127.0.0.1:53478/d01/index"
+          ],
+          "max_steps": 6,
+          "question": "When does the Cedar archive open?",
+          "start_url": "http://127.0.0.1:53478/d01/index"
+        },
+        "untrusted_observations": [
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-1",
+            "observed_at": "2026-11-07T17:15:45.616717+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          },
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-2",
+            "observed_at": "2026-11-07T17:15:49.279552+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          },
+          {
+            "body_sha256": "869bb12213620dc0ab0956922a3ff1af468e62a1ea3f0fe0db88f948caccf76a",
+            "body_text": "The Cedar archive opens on Tuesday.",
+            "final_url": "http://127.0.0.1:53478/d01/index",
+            "links": [],
+            "observation_id": "obs-3",
+            "observed_at": "2026-11-07T17:15:58.382050+00:00",
+            "status_code": 200,
+            "title": "Archive guide",
+            "truncated": false,
+            "url": "http://127.0.0.1:53478/d01/index"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 27,
+      "type": "model_response",
+      "payload": {
+        "raw": "{\"action\":\"finish\",\"claims\":[{\"observation_id\":\"obs-1\",\"quote\":\"The Cedar archive opens on Tuesday.\"}],\"uncertainty\":[{\"kind\":\"other\",\"detail\":\"Multiple identical observations with same body text\"}]}"
+      }
+    },
+    {
+      "seq": 28,
+      "type": "action_proposed",
+      "payload": {
+        "action_id": "action-5",
+        "requested": {
+          "action": "finish",
+          "claims": [
+            {
+              "observation_id": "obs-1",
+              "quote": "The Cedar archive opens on Tuesday."
+            }
+          ],
+          "uncertainty": [
+            {
+              "detail": "Multiple identical observations with same body text",
+              "kind": "other"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 29,
+      "type": "gateway_decision",
+      "payload": {
+        "action_id": "action-5",
+        "allowed": true,
+        "reason": "Accepted by closed action contract"
+      }
+    },
+    {
+      "seq": 30,
+      "type": "final_validation",
+      "payload": {
+        "accepted": true,
+        "action_id": "action-5",
+        "claim_count": 1
+      }
+    }
+  ]
+}
