@@ -86,4 +86,6 @@ python3 scripts/showcase.py --out my-check
 
 The GitHub Actions workflow runs these checks on Python 3.10, 3.12, and 3.13 after publication. Configured CI is not a claim that remote CI has already run. This repository has no runtime dependencies; its CI uses GitHub's standard checkout and Python setup actions.
 
-No license has been selected. Choose one before inviting external reuse; a public repository alone does not grant a software license.
+## License
+
+Licensed under the [MIT License](LICENSE). Copyright (c) 2026 Evgeny Tkachenko.

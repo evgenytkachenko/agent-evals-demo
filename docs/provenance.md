@@ -27,4 +27,4 @@ Fresh live execution requires a separately configured and authorized researcher,
 
 ## Publication decisions
 
-Public repository access does not grant a software reuse license. No license is included in this version; selecting one remains the owner's decision. Test results described in the preparation are local results. Consult the repository's Actions page for remote CI on the exact commit you use.
+The owner selected the [MIT License](../LICENSE) for this repository. Copyright (c) 2026 Evgeny Tkachenko. Test results described in the preparation are local results. Consult the repository's Actions page for remote CI on the exact commit you use.

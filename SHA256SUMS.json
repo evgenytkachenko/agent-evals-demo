@@ -1,10 +1,11 @@
 {
   ".github/workflows/evals.yml": "2a7b14a4a6406bf92c09958be7b76447bc6f963b9f4628a4a5a3260ba8fb8c1f",
   ".gitignore": "f51240cfc2abd92b9ad018d641baac6f9ac9df1c44cf10149c615c063781b731",
-  "README.md": "6a4e506d017da99f95d83f58c3b2d5e4a7425d8e8441727b74ce948090db11a5",
+  "LICENSE": "51e3e433510aec871a8561a55f5367fbfe7b7fd4b249e8f30750a433cce03ef0",
+  "README.md": "e842f8b094bdbfe33e96d852101f35fab8d76f24bc4d7b5f6832b3745ed809dd",
   "docs/case-study.md": "730badf309c868e37555b5525c73f2fd7e0073b74fd4de35cdb71d00887d981d",
   "docs/demo-report.html": "065069f8f94db6ea3b0fac9a1e9b4b736e5892e90102fa23e7d19c1a051dbc6c",
-  "docs/provenance.md": "489a88e0158dc3096dc2fd28a7b129687038657a36f1951428c8dc129b9a6af1",
+  "docs/provenance.md": "a17317ee638a62d7b3d79bc1c6ffed43a6ff5dba9c48c011df704308c261bdbd",
   "docs/review.md": "06b8db438abdc46bfe966ba57c735432a0d2c650a87da88f01bdff85a72224b3",
   "docs/trace-v1.md": "10d409a835cf47fd7bed5de122de2895d931c19b470d9ecd5ddb18da5151d64e",
   "docs/walkthrough.md": "33df644b38aba3308e967888fe7f3c881a737b02dd754fdc6cfd61d761e1bf1f",
